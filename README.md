@@ -17,20 +17,20 @@ On Jazzy devices, you will need to make a few modifications. First start by clon
 Next, install the included .deb file to replace ```ros-jazzy-rmw-dds-common``` without removing all packages that depend on it. The .deb does nothing except having the same name as the actual package. If you don't want to install a random person's .deb file, see below how to create your own dummy package.
 
 ```
-sudo dpkg -i ros-jazzy-rmw-dds-common\_0.0.1\_all.deb
+sudo dpkg -i ros-jazzy-rmw-dds-common_0.0.1_all.deb
 ```
 
 Now build the rmw packages and source your workspace.
 
 ```
-colcon build --packages-up-to rmw\_cyclonedds\_cpp
+colcon build --packages-up-to rmw_cyclonedds_cpp
 source ./install/setup.bash
 ```
 
 Finally, set the RMW_IMPLEMENTATION environment variable
 
 ```
-export RMW\_IMPLEMENTATION=rmw\_cyclonedds\_cpp
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 ```
 
 ### Humble Devices
@@ -39,7 +39,7 @@ Humble devices are easier to set up. Simply install the official cyclonedds pack
 
 ```
 sudo apt install ros-humble-cyclone ros-humble-rmw-dds-common
-export RMW\_IMPLEMENTATION=rmw\_cyclonedds\_cpp
+export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 ```
 
 ### Creating a dummy .deb file
@@ -49,7 +49,7 @@ The uncompiled .deb is also included in the dummy-package folder. Simply navigat
 ```
 sudo apt install equivs
 equivs-build ros-jazzy-rmw-dds-common
-sudo dpkg -i ros-jazzy-rmw-dds-common\_0.0.1\_all.deb
+sudo dpkg -i ros-jazzy-rmw-dds-common_0.0.1_all.deb
 ```
 
 Feel free to make your own modifications to the build file before building.
@@ -59,8 +59,8 @@ Feel free to make your own modifications to the build file before building.
 The easiest way to test whether the installation was successful is to start a demo talker node on one device and a demo listener node on the other device.
 
 ```
-ros2 run demo\_nodes\_cpp talker
-ros2 run demo\_nodes\_cpp listener
+ros2 run demo_nodes_cpp talker
+ros2 run demo_nodes_cpp listener
 ```
 
 If both nodes can communicate, the setup was successful.
