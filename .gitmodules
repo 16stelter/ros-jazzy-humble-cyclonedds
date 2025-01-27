@@ -1,0 +1,6 @@
+[submodule "rmw_cyclonedds"]
+	path = rmw_cyclonedds
+	url = git@github.com:16stelter/rmw_cyclonedds.git
+[submodule "rmw_dds_common"]
+	path = rmw_dds_common
+	url = git@github.com:16stelter/rmw_dds_common.git
