@@ -70,3 +70,5 @@ I have tested this software on a Ubuntu 24.04 laptop with Jazzy and a Ubuntu 22.
 ## Known Issues
 
 When first setting up this modification, old rmw nodes are not always closed correctly. This may cause weird behaviours such as commands getting stuck indefinitely or reporting message types to be unreadable. If this occurs, simply kill all running rmw nodes, e.g. using htop.
+
+If network connectivity is lost, the network changes, or if the device goes into hibernation, all running ros2 commands will crash with "tev: ddsi_udp_conn_write to udp/<ip> failed with retcode -1".
